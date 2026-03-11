@@ -21,6 +21,33 @@ interface SampleRow {
   owner: string;
 }
 
+const SAMPLE_ROWS: SampleRow[] = [
+  { id: 1001, product: "Grid Toolbar", status: "Ready", owner: "Alex" },
+  { id: 1002, product: "Column Pinning", status: "Review", owner: "Sam" },
+  { id: 1003, product: "Column Hiding", status: "Ready", owner: "Jordan" },
+  { id: 1004, product: "Select Control", status: "Draft", owner: "Casey" },
+  { id: 1005, product: "Button Action", status: "Queued", owner: "Taylor" },
+  { id: 1006, product: "Compact Density", status: "Ready", owner: "Morgan" },
+  { id: 1007, product: "Static Dataset", status: "Review", owner: "Riley" },
+  { id: 1008, product: "Grid Styling", status: "Draft", owner: "Jamie" },
+  { id: 1001, product: "Grid Toolbar", status: "Ready", owner: "Alex" },
+  { id: 1002, product: "Column Pinning", status: "Review", owner: "Sam" },
+  { id: 1003, product: "Column Hiding", status: "Ready", owner: "Jordan" },
+  { id: 1004, product: "Select Control", status: "Draft", owner: "Casey" },
+  { id: 1005, product: "Button Action", status: "Queued", owner: "Taylor" },
+  { id: 1006, product: "Compact Density", status: "Ready", owner: "Morgan" },
+  { id: 1007, product: "Static Dataset", status: "Review", owner: "Riley" },
+  { id: 1008, product: "Grid Styling", status: "Draft", owner: "Jamie" },
+  { id: 1001, product: "Grid Toolbar", status: "Ready", owner: "Alex" },
+  { id: 1002, product: "Column Pinning", status: "Review", owner: "Sam" },
+  { id: 1003, product: "Column Hiding", status: "Ready", owner: "Jordan" },
+  { id: 1004, product: "Select Control", status: "Draft", owner: "Casey" },
+  { id: 1005, product: "Button Action", status: "Queued", owner: "Taylor" },
+  { id: 1006, product: "Compact Density", status: "Ready", owner: "Morgan" },
+  { id: 1007, product: "Static Dataset", status: "Review", owner: "Riley" },
+  { id: 1008, product: "Grid Styling", status: "Draft", owner: "Jamie" },
+];
+
 @Component({
   selector: "app-root",
   imports: [
@@ -40,32 +67,8 @@ interface SampleRow {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {
-  protected readonly rows = signal<SampleRow[]>([
-    { id: 1001, product: "Grid Toolbar", status: "Ready", owner: "Alex" },
-    { id: 1002, product: "Column Pinning", status: "Review", owner: "Sam" },
-    { id: 1003, product: "Column Hiding", status: "Ready", owner: "Jordan" },
-    { id: 1004, product: "Select Control", status: "Draft", owner: "Casey" },
-    { id: 1005, product: "Button Action", status: "Queued", owner: "Taylor" },
-    { id: 1006, product: "Compact Density", status: "Ready", owner: "Morgan" },
-    { id: 1007, product: "Static Dataset", status: "Review", owner: "Riley" },
-    { id: 1008, product: "Grid Styling", status: "Draft", owner: "Jamie" },
-    { id: 1001, product: "Grid Toolbar", status: "Ready", owner: "Alex" },
-    { id: 1002, product: "Column Pinning", status: "Review", owner: "Sam" },
-    { id: 1003, product: "Column Hiding", status: "Ready", owner: "Jordan" },
-    { id: 1004, product: "Select Control", status: "Draft", owner: "Casey" },
-    { id: 1005, product: "Button Action", status: "Queued", owner: "Taylor" },
-    { id: 1006, product: "Compact Density", status: "Ready", owner: "Morgan" },
-    { id: 1007, product: "Static Dataset", status: "Review", owner: "Riley" },
-    { id: 1008, product: "Grid Styling", status: "Draft", owner: "Jamie" },
-    { id: 1001, product: "Grid Toolbar", status: "Ready", owner: "Alex" },
-    { id: 1002, product: "Column Pinning", status: "Review", owner: "Sam" },
-    { id: 1003, product: "Column Hiding", status: "Ready", owner: "Jordan" },
-    { id: 1004, product: "Select Control", status: "Draft", owner: "Casey" },
-    { id: 1005, product: "Button Action", status: "Queued", owner: "Taylor" },
-    { id: 1006, product: "Compact Density", status: "Ready", owner: "Morgan" },
-    { id: 1007, product: "Static Dataset", status: "Review", owner: "Riley" },
-    { id: 1008, product: "Grid Styling", status: "Draft", owner: "Jamie" },
-  ]);
+  protected readonly rows = signal<SampleRow[]>([]);
+  protected readonly isLoading = signal(true);
 
   protected readonly selectOptions = signal([
     "Ready",
@@ -74,4 +77,11 @@ export class App {
     "Queued",
   ]);
   protected readonly selectedOption = signal("Ready");
+
+  public constructor() {
+    window.setTimeout(() => {
+      this.rows.set(SAMPLE_ROWS);
+      this.isLoading.set(false);
+    }, 5000);
+  }
 }
