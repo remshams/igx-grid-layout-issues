@@ -1,3 +1,8 @@
 # igx-grid-layout-issues
 
-A new project created with Intent by Augment.
+Minimal Angular + Ignite UI for Angular repro scaffold created directly in the repository root.
+
+## Scripts
+
+- `npm start` — run the Angular dev server
+- `npm run build` — create a production build
