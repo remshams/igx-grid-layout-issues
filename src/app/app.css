@@ -1,11 +1,14 @@
 :host {
+  height: 100%;
   display: block;
   --repro-grid-size: 1;
 }
 
 .page {
-  display: flex;
-  flex-direction: column;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1f min-content min-content;
+  grid-template-columns: 1fr;
   gap: 1rem;
   padding: 1.5rem;
   box-sizing: border-box;
