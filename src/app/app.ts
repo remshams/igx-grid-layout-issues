@@ -63,6 +63,7 @@ interface SampleRow {
             :host {
                 display: block;
                 min-height: 100vh;
+                --repro-grid-size: 1;
             }
 
             .page {
@@ -75,6 +76,7 @@ interface SampleRow {
             }
 
             .grid {
+                --ig-size: var(--repro-grid-size);
                 width: 100%;
             }
 
@@ -93,6 +95,9 @@ export class App {
         { id: 1003, product: 'Column Hiding', status: 'Ready', owner: 'Jordan' },
         { id: 1004, product: 'Select Control', status: 'Draft', owner: 'Casey' },
         { id: 1005, product: 'Button Action', status: 'Queued', owner: 'Taylor' },
+        { id: 1006, product: 'Compact Density', status: 'Ready', owner: 'Morgan' },
+        { id: 1007, product: 'Static Dataset', status: 'Review', owner: 'Riley' },
+        { id: 1008, product: 'Grid Styling', status: 'Draft', owner: 'Jamie' },
     ]);
 
     protected readonly selectOptions = signal(['Ready', 'Review', 'Draft', 'Queued']);
