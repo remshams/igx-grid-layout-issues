@@ -32,60 +32,8 @@ interface SampleRow {
         IgxSelectItemComponent,
         IgxButtonDirective,
     ],
-    template: `
-        <div class="page">
-            <igx-grid class="grid" [data]="rows()" [autoGenerate]="false" width="100%" height="360px">
-                <igx-grid-toolbar>
-                    <igx-grid-toolbar-title>IGX Repro Grid</igx-grid-toolbar-title>
-                    <igx-grid-toolbar-actions>
-                        <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
-                        <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
-                    </igx-grid-toolbar-actions>
-                </igx-grid-toolbar>
-
-                <igx-column field="id" header="ID"></igx-column>
-                <igx-column field="product" header="Product"></igx-column>
-                <igx-column field="status" header="Status"></igx-column>
-                <igx-column field="owner" header="Owner"></igx-column>
-            </igx-grid>
-
-            <igx-select class="control" [value]="selectedOption()" placeholder="Select a sample state">
-                @for (option of selectOptions(); track option) {
-                    <igx-select-item [value]="option">{{ option }}</igx-select-item>
-                }
-            </igx-select>
-
-            <button igxButton="contained" type="button">Run Repro</button>
-        </div>
-    `,
-    styles: [
-        `
-            :host {
-                display: block;
-                min-height: 100vh;
-                --repro-grid-size: 1;
-            }
-
-            .page {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-                min-height: 100vh;
-                padding: 1.5rem;
-                box-sizing: border-box;
-            }
-
-            .grid {
-                --ig-size: var(--repro-grid-size);
-                width: 100%;
-            }
-
-            .control,
-            button[igxButton] {
-                width: min(18rem, 100%);
-            }
-        `,
-    ],
+    templateUrl: './app.html',
+    styleUrl: './app.css',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {
