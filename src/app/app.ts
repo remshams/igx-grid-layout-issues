@@ -49,6 +49,22 @@ export class App {
     { id: 1006, product: "Compact Density", status: "Ready", owner: "Morgan" },
     { id: 1007, product: "Static Dataset", status: "Review", owner: "Riley" },
     { id: 1008, product: "Grid Styling", status: "Draft", owner: "Jamie" },
+    { id: 1001, product: "Grid Toolbar", status: "Ready", owner: "Alex" },
+    { id: 1002, product: "Column Pinning", status: "Review", owner: "Sam" },
+    { id: 1003, product: "Column Hiding", status: "Ready", owner: "Jordan" },
+    { id: 1004, product: "Select Control", status: "Draft", owner: "Casey" },
+    { id: 1005, product: "Button Action", status: "Queued", owner: "Taylor" },
+    { id: 1006, product: "Compact Density", status: "Ready", owner: "Morgan" },
+    { id: 1007, product: "Static Dataset", status: "Review", owner: "Riley" },
+    { id: 1008, product: "Grid Styling", status: "Draft", owner: "Jamie" },
+    { id: 1001, product: "Grid Toolbar", status: "Ready", owner: "Alex" },
+    { id: 1002, product: "Column Pinning", status: "Review", owner: "Sam" },
+    { id: 1003, product: "Column Hiding", status: "Ready", owner: "Jordan" },
+    { id: 1004, product: "Select Control", status: "Draft", owner: "Casey" },
+    { id: 1005, product: "Button Action", status: "Queued", owner: "Taylor" },
+    { id: 1006, product: "Compact Density", status: "Ready", owner: "Morgan" },
+    { id: 1007, product: "Static Dataset", status: "Review", owner: "Riley" },
+    { id: 1008, product: "Grid Styling", status: "Draft", owner: "Jamie" },
   ]);
 
   protected readonly selectOptions = signal([
